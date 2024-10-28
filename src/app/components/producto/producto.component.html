@@ -1,0 +1,24 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      @for(producto of productos; track producto.idproducto){
+          <div class="lg:w-1/4 md:w-1/2 p-4 w-full producto-container">
+            <a class="block relative h-48 rounded overflow-hidden">
+              <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="../../assets/img/perfumes/{{producto.imagen}}">
+            </a>
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{producto.familiaOlfativa}}</h3>
+              <h2 class="text-gray-900 title-font text-lg font-medium">{{producto.nombre}}</h2>
+              <p class="mt-1">{{producto.marca}}</p>
+              <p class="mt-1">${{producto.precio}}</p>
+            </div>
+            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" (click)="(addToCart(producto))">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"/>
+              </svg>              
+            </button>
+          </div>
+      }
+    </div>
+  </div>
+</section>
